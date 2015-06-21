@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	<persistence-unit name="org.infinispan.persistence.jpa">
+		<!-- This class is required to allow store metadata -->
+		<class>org.cloudysunny14.persistence.jpa.eclipselink.impl.MetadataEntity</class>
+		<class>org.cloudysunny14.persistence.jpa.eclipselink.entity.Document</class>
+		<class>org.cloudysunny14.persistence.jpa.eclipselink.entity.KeyValueEntity</class>
+		<class>org.cloudysunny14.persistence.jpa.eclipselink.entity.Person</class>
+		<class>org.cloudysunny14.persistence.jpa.eclipselink.entity.User</class>
+		<class>org.cloudysunny14.persistence.jpa.eclipselink.entity.Vehicle</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1"/>
+			<property name="eclipselink.jdbc.batch-writing.size" value="20"/>
+			<property name="eclipselink.jdbc.fetch-size" value="20"/>
+			<property name="eclipselink.ddl-generation" value="create-tables"/> <!-- use create-drop for testing -->
+		</properties>
+	</persistence-unit>
+
+	<persistence-unit name="org.infinispan.persistence.jpa.configurationTest">
+		<!-- This class is required to allow store metadata -->
+		<class>org.cloudysunny14.persistence.jpa.eclipselink.impl.MetadataEntity</class>
+		<class>org.cloudysunny14.persistence.jpa.eclipselink.entity.Document</class>
+		<class>org.cloudysunny14.persistence.jpa.eclipselink.entity.KeyValueEntity</class>
+		<class>org.cloudysunny14.persistence.jpa.eclipselink.entity.Person</class>
+		<class>org.cloudysunny14.persistence.jpa.eclipselink.entity.User</class>
+		<class>org.cloudysunny14.persistence.jpa.eclipselink.entity.Vehicle</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1"/>
+			<property name="eclipselink.jdbc.batch-writing.size" value="20"/>
+			<property name="eclipselink.jdbc.fetch-size" value="20"/>
+			<property name="eclipselink.ddl-generation" value="create-tables"/> <!-- use create-drop for testing -->
+		</properties>
+	</persistence-unit>
+
+	<persistence-unit name="org.infinispan.persistence.jpa.no_metadata">
+		<class>org.cloudysunny14.persistence.jpa.eclipselink.impl.MetadataEntity</class>
+		<class>org.cloudysunny14.persistence.jpa.eclipselink.entity.Document</class>
+		<class>org.cloudysunny14.persistence.jpa.eclipselink.entity.KeyValueEntity</class>
+		<class>org.cloudysunny14.persistence.jpa.eclipselink.entity.Person</class>
+		<class>org.cloudysunny14.persistence.jpa.eclipselink.entity.User</class>
+		<class>org.cloudysunny14.persistence.jpa.eclipselink.entity.Vehicle</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1"/>
+			<property name="eclipselink.jdbc.batch-writing.size" value="20"/>
+			<property name="eclipselink.jdbc.fetch-size" value="20"/>
+			<property name="eclipselink.ddl-generation" value="create-tables"/> <!-- use create-drop for testing -->
+		</properties>
+	</persistence-unit>
+</persistence>

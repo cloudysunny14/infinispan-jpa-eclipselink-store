@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<infinispan>
+  <cache-container default-cache="default">
+    <local-cache name="default">
+      <locking isolation="REPEATABLE_READ"
+               acquire-timeout="20000" write-skew="false"
+               concurrency-level="500" striping="false" />
+    </local-cache>
+    <local-cache name="vehicleCache">
+      <persistence passivation="false">
+        <jpa-eclipselink-store xmlns="urn:infinispan:config:store:jpa-eclipselink:7.2"
+                  shared="false" preload="true"
+                  persistence-unit="org.infinispan.persistence.jpa.configurationTest"
+                  entity-class="org.cloudysunny14.persistence.jpa.eclipselink.entity.Vehicle"
+                  batch-size="1">
+        </jpa-eclipselink-store>
+      </persistence>
+    </local-cache>
+  </cache-container>
+</infinispan>

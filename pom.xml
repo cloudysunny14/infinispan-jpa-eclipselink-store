@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.cloudysunny14</groupId>
 	<artifactId>infinispan-cachestore-jpa-eclipselink</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>Infinispan JPA CacheStore Eclipselink</name>
 	<description>Infinispan JPA CacheStore module</description>
 	<developers>
@@ -53,6 +53,7 @@
 		<version.postgresql.driver>9.3-1101-jdbc41</version.postgresql.driver>
 		<version.mockito>1.9.5</version.mockito>
 		<version.junit>4.11</version.junit>
+		<infinispan.core.schema.version>7.2</infinispan.core.schema.version>
 	</properties>
 	<build>
 		<pluginManagement>
